@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title={cardTitle}>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-tile label="Students Percentage Calculation" href="/path/to/somewhere">
+                <p class="slds-truncate" title="Student Name">Marks Details</p>
+                <lightning-input type="text" name="input1"  style="width: fit-content" label="Enter Student Name" ></lightning-input>
+                <lightning-input type="number" name="input1" style="width: fit-content" label="Enter Math Marks" onchange={onMathMarksChange} ></lightning-input>
+                <lightning-input type="number" name="input1" style="width: fit-content" label="Enter English Marks" onchange={onEnglishMarksChange} ></lightning-input>
+                <lightning-input type="number" name="input1" style="width: fit-content" label="Enter Hindi Marks" onchange={onHindiMarksChange} ></lightning-input>
+                <lightning-input type="number" name="input1" style="width: fit-content" label="Enter Science Marks" onchange={onScienceMarksChange} ></lightning-input>
+                <p onchange={onTotalMarksChange} >Total Marks : {totalMarks}</p>
+                <lightning-button  label="Enter Total Percentage"  onclick={calculateMarks}></lightning-button>
+                 <p>
+                     The Percentage is :{percentage}
+                 </p>
+            </lightning-tile>
+        </div>
+    </lightning-card>
+</template>

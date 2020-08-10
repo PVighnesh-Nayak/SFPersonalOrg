@@ -1,0 +1,31 @@
+<template>
+     <lightning-card title="MEETING ROOMS">
+         <lightning-layout>
+         <lightning-layout-item size="4" padding="around-small">
+        
+        <!-- to itterate the array from the js we are using an for each directive here -->
+   
+    <!-- for each directive to accept the array property -->
+    <!-- to accept the currect element we use for:items -->
+
+    <ul>
+        <template for:each={meetingRoomsInfo} for:item="room">
+        <!-- here we will asign few list items lets give the key first -->
+          <li key ={room.roomName} style="padding: 10px;">
+              <!-- inside the list lets declare the child components -->
+              <!-- declare the meeting room child component name -->
+              <c-meeting-room meeting-room-info={room}  ontileclick={onTileSelectHandler}></c-meeting-room>
+          </li>    
+        </template>
+    </ul>
+
+        </lightning-layout-item>
+        <lightning-card>
+            <lightning-layout-item class="selectedRoom" size="8" padding="around-small">
+            You have selected  : {selectedMeetingRoom}
+        </lightning-layout-item>
+        </lightning-card>        
+         </lightning-layout>
+     </lightning-card>
+    
+</template>

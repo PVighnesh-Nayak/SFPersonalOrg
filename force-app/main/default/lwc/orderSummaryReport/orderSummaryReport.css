@@ -1,0 +1,41 @@
+.THIS  .table, td, th {
+  border: 1px solid black;
+  padding : 5px;
+  text-align: -webkit-center;
+}
+
+.THIS .table {
+  width: auto;
+  text-align:center;
+}
+
+.th {
+    display: flex;
+}
+.tableheader {
+
+  color: white;
+background-color: #572A31;
+}
+   
+
+.THIS .td{
+    display: flex;
+}
+.combobox {
+    width: fit-content;
+    text-align: center;
+    font-size: medium;
+    font-weight: 800;
+    font-family: sans-serif;
+    
+} 
+.table_label {
+  width: 145px !important;
+  
+}
+.button_color{
+  color: white;
+  background-color: #572A31;
+
+}

@@ -1,0 +1,8 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg" onclick={tileClickHandler}>
+        <lightning-tile label={studentsRecords.studentName} href="/path/to/somewhere">
+            <p class="slds-truncate" title={studentsRecords.studentRegNumber}>Student Registration Number : {studentsRecords.studentRegNumber}</p>
+            <p class="slds-truncate" title={studentsRecords.studentMarks}>Student Marks : {studentsRecords.studentMarks}</p>
+        </lightning-tile>
+    </div>
+</template>

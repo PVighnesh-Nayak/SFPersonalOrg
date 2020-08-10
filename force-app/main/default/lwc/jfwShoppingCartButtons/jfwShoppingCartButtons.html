@@ -1,0 +1,120 @@
+<template>
+  
+    <lightning-card>
+        <button class="slds-button slds-button_neutral  slds-float_left backToPOS_button_style" title="search" onclick={backToPosItem} >
+            Back to POS</button>
+            <button class="slds-button slds-button_neutral addAddress_button_style" title="search" onclick={openModal} >
+               Add same address for all the items</button>
+                <button class="slds-button slds-button_neutral  slds-float_right viewcart_button_style" title="search" onclick={previewOrderPage} >
+                    Preview Order</button>
+    </lightning-card>
+
+<!-- shipping address pop_up -->
+<template if:true={isModalOpen}>
+    <lightning-card>
+      <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container"> 
+
+                <!-- Box LWC header here -->
+                <header class="slds-modal__header popUpHeader">
+                  <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                   <lightning-icon icon-name="utility:close"
+                     alternative-text="close"
+                     variant="inverse"
+                     size="small" class="popup_close" ></lightning-icon>
+                   <span class="slds-assistive-text">Close</span>
+                 </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate popUp_header">Shipping Address for all Items</h2>
+               </header>
+ 
+               <!-- Modal Body -->
+               <lightning-card style="margin-bottom: -21px;" class=" modal_body_style">
+                <lightning-input type="search" onchange={searchAddress} value={searchedKeyword} label="Search " style="width: 30vw;" class="slds-align_absolute-center slds-media_center" placeholder="Search based on ship to name,ship to company and city" ></lightning-input>
+                  <button onclick={searchOnClickOfButton} class="slds-button slds-button_neutral slds-align_absolute-center search_button_style"  
+                  title="search">Search</button>
+               </br>
+                  <!-- The addresses -->
+
+<div class="c-container">
+    <div class="table-responsive scroll-box">
+        <div class="c-container">
+            <p style="background-color:#d0cece">Selected Addresses</p>
+        </div>  
+        <table>
+               <tbody>
+                <template for:each={selectedAddressList} for:item="selectedList">
+                    <tr key={selectedList.id}>
+                        <td>
+                            <lightning-input class="slds-p-left_xx-small" type="checkbox" style="text-align: left;" checked={selectedList.isCheckboxClicked} value={selectedList.selectedAddress.Id}  onchange={availableHandleChange}
+                            ></lightning-input>
+                        </td>
+                        <td>
+                            <b>{selectedList.selectedAddress.Destination_Name__c},{selectedList.selectedAddress.Ship_To_Company__c},   {selectedList.selectedAddress.Ship_To_Name__c}, {selectedList.selectedAddress.State__c},
+                            {selectedList.selectedAddress.City__c}
+                               </b>
+                        </td>
+                        <td>
+                            <lightning-combobox
+                            name="progress"
+                            value={selectedList.selectedShippingMethodId}
+                            data-id={selectedList.selectedAddress.Id}
+                            options={shippingMethodListToDisplay}
+                            onchange={shippingMethodHandleChange}
+                           ></lightning-combobox>
+                        </td>
+                    </tr>
+                </template>
+</tbody>
+</table>
+<div class="c-container">
+    <p style="background-color:#d0cece">Available Addresses</p>
+</div>
+<table>
+
+    <tbody>
+
+        <template for:each={avaialbleAddressList} for:item="address">
+                     <tr key={address.id}>
+                      <td>
+                         <div>
+                            <lightning-input class="slds-p-left_xx-small" type="checkbox" style="text-align: left;" checked={CheckedValue} value={address.selectedAddress.Id}  onchange={availableHandleChange}
+                             ></lightning-input>
+                         </div>
+                       </td>
+                       <td>
+                           <div>
+                                <b>{address.selectedAddress.Destination_Name__c},{address.selectedAddress.Ship_To_Company__c},
+                                        {address.selectedAddress.Ship_To_Name__c},{address.selectedAddress.State__c},
+                                        {address.selectedAddress.City__c}</b>
+                            </div>
+                        </td>
+                        <td>
+                           <div >
+                                <lightning-combobox
+                                    name="progress"
+                                    value={value}
+                                    options={shippingMethodListToDisplay}
+                                   ></lightning-combobox>
+                            </div>
+                        </td>
+                      </tr>
+                </template>
+    </tbody>
+    <!-- </div> -->
+</table>
+</div>
+</div>
+</lightning-card>
+
+<!-- PopUp Footer -->
+<footer class="slds-modal__footer  modal_footer_style">
+    <button class="slds-button slds-button_neutral save_button_style slds-align_absolute-center" title="save" onclick={saveSelectedAddress}>save</button>
+    <button class="slds-button slds-button_neutral cancel_button_style " onclick={closeModal} title="cancel">Cancel</button>
+</footer>
+
+</div>
+</section>
+<!-- <div class="slds-backdrop slds-backdrop_open"></div> -->
+</lightning-card>
+</template>
+</template>

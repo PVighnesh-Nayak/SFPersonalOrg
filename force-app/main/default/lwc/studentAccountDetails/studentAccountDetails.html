@@ -1,0 +1,10 @@
+<template>
+    
+    <lightning-card class="title-style" title="Student Information" >
+       <div class="slds-p-around_medium" style="background-color: darkgray;" >
+           <lightning-record-form style="background-color: darkgray;" class="data-field" object-api-name="Student__c" fields={fieldsArray} record-id={recordId} column="2" mode="edit" onsuccess={handleSuccess} onclick ={showToast} >
+
+           </lightning-record-form>
+       </div>
+    </lightning-card>
+</template>

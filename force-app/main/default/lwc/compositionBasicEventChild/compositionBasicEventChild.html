@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+
+        <template if:true={contact}>
+          <img src={contact.Picture} alt="Profile photo" />
+          <p>{contact.Name}</p>
+          <p>{contact.Title}</p>
+        </template>
+        <template if:false={contact}>
+          <p>No contact data available.</p>
+        </template>
+        <p>
+          <button onclick={updateContact}>Update Contact</button>
+        </p>
+    </lightning-card>
+  </template>

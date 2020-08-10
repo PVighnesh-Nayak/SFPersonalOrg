@@ -1,0 +1,8 @@
+<template>
+    <template if:false={brandlist}>
+
+        <lightning-combobox class="combobox slds-align_absolute-center slds-listbox__option slds-media_center slds-media_small slds-listbox__option_plain"
+        style ="font-size:small" dropdown-alignment="right" name="orderStatus" label="Brand"
+        placeholder="Select a Brand" value={value} options={brandListToDisplay} onchange={onSelectionOfBrand}></lightning-combobox> 
+    </template>
+</template>

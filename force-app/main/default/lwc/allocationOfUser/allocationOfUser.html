@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <div class="breadcrumbContents">
+            <ul class="breadcrumb">
+                <li><a>Home</a></li>
+                 <li><a>Admin</a></li>
+                <li><a>Allocate Users</a></li>
+            </ul>
+         </div>
+        </lightning-card>
+        <c-allocation-of-user-search-available-user onsendsearchdatatoavailable={searchEventHandler}></c-allocation-of-user-search-available-user>
+        <c-allocation-of-user-available-and-allocated-users getsearch-value={searchValue}  ></c-allocation-of-user-available-and-allocated-users>
+</template>

@@ -1,0 +1,63 @@
+.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+.page-section {
+    border: solid 1px #93011B;;
+    padding: 1rem;
+}
+.page-header,
+.page-footer {
+    height: 80px;
+}
+/* .page-main {
+    background: #f8f8f8;
+} */
+.page-left,
+.page-main,
+.page-right {
+    background:white;
+    height:  64vh;
+    width: 84%;
+}
+.on_hover_layout_style {
+    border: 1px solid black;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+/* Transition to a bigger shadow on hover */
+.on_hover_layout_style:hover {
+    box-shadow: 0 5px 10px #4CBB17;
+}
+
+.on_hover_layout_style:hover::after {
+    opacity: 1;
+}
+
+.on_hover_red_style {
+    border: 1px solid black;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+/* Transition to a bigger shadow on hover */
+.on_hover_red_style:hover {
+    box-shadow: 0 5px 10px #93011B;;
+}
+
+.on_hover_red_style:hover::after {
+    opacity: 1;
+}
+.item_text_style{
+    font-weight: 700;
+    font-size: small;
+}
+.add_to_cart_button_style{
+    background-color:#4CBB17;
+    color:white;
+    font-weight:800
+}
+.remove_from_cart_button_style{
+    background-color:#93011B;
+    color:white;
+    font-weight:800
+}

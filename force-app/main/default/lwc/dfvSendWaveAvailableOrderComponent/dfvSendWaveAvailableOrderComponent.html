@@ -1,0 +1,177 @@
+<template>
+
+        <lightning-card  >
+           <div class="table-responsive scroll-box" style="margin-left: 20px;">
+        
+               <table class="table-fixed">
+                 <thead>
+                     <tr >
+                        <th class="tableheaderfirst ">Program</th>
+                        <th class="tableheader ">Ordered By</th>
+                        <th class="tableheader ">Ordered Number</th>
+                        <th class="tableheader ">Date</th>
+                        <th class="tableheader ">Ship To Name</th>
+                        <th class="tableheader ">Ship To Company</th>
+                        <th class="tableheader ">City</th>
+                        <th class="tableheader ">State</th>
+                        <th class="tableheader ">view items</th>
+                        <th class="tableheader ">Remove</th>
+                     </tr>
+                 </thead>
+ 
+ 
+                 <tbody>
+                    
+                        <tr  class="table_Column" >
+                            <td>DFV Summer</td>
+                            <td>Admin</td>
+                            <td>IO_4554_4456</td>
+                            <td>06/21/2020</td>
+                            <td>Karina</td>
+                            <td>DFV</td>
+                            <td>Newyork</td>
+                            <td>Newyork</td>
+                            <td><lightning-button variant="brand" label="View Items"  onclick={openModal}></lightning-button></td>
+                          <td > 
+                                     <lightning-icon icon-name="utility:add" class="slds-align_absolute-center"  size="x-small"></lightning-icon>
+                          </td>
+                        </tr>
+                        <tr  class="table_Column" >
+                            <td>DFV Summer</td>
+                            <td>Admin</td>
+                            <td>IO_4554_4456</td>
+                            <td>06/21/2020</td>
+                            <td>Karina</td>
+                            <td>DFV</td>
+                            <td>Newyork</td>
+                            <td>Newyork</td>
+                            <td><lightning-button variant="brand" label="View Items"  onclick={openModal}></lightning-button></td>
+                          <td > 
+                            <lightning-icon icon-name="utility:add" class="slds-align_absolute-center"  size="x-small"></lightning-icon>
+                          </td>
+                        </tr>
+                        <tr  class="table_Column" >
+                            <td>DFV Summer</td>
+                            <td>Admin</td>
+                            <td>IO_4554_4456</td>
+                            <td>06/21/2020</td>
+                            <td>Karina</td>
+                            <td>DFV</td>
+                            <td>Newyork</td>
+                            <td>Newyork</td>
+                            <td><lightning-button variant="brand" label="View Items"  onclick={openModal}></lightning-button></td>
+                          <td > 
+                            <lightning-icon icon-name="utility:add" class="slds-align_absolute-center"  size="x-small"></lightning-icon>
+                          </td>
+                        </tr>
+                        <tr  class="table_Column" >
+                            <td>DFV Summer</td>
+                            <td>Admin</td>
+                            <td>IO_4554_4456</td>
+                            <td>06/21/2020</td>
+                            <td>Karina</td>
+                            <td>DFV</td>
+                            <td>Newyork</td>
+                            <td>Newyork</td>
+                            <td><lightning-button variant="brand" label="View Items" onclick={openModal}></lightning-button></td>
+                          <td > 
+                            <lightning-icon icon-name="utility:add" class="slds-align_absolute-center"  size="x-small"></lightning-icon>
+                          </td>
+                        </tr>
+                   
+                    </tbody>
+                </table>
+             
+             </div>
+             </lightning-card>
+
+<!-- popup model to onclick of button -->
+             <template if:true={isModalOpen}>
+              <lightning-card>
+              <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+              <div class="slds-modal__container"> 
+      
+              <!-- Box LWC header here -->
+                   <header class="slds-modal__header">
+                       <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                          alternative-text="close"
+                          style="margin-top: 29px;"
+                          variant="inverse"
+                          size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                      </button>
+                         <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Item Details</h2>
+                    </header>
+      
+              <!-- record form -->
+                 <lightning-card>
+                  <lightning-card  >
+                    <div class="table-responsive scroll-box" >
+                 
+                        <table class="table-fixed">
+                          <thead>
+                              <tr >
+                                 <th class="tableheaderfirst ">Item Name</th>
+                                 <th class="tableheader ">Item Number</th>
+                                 <th class="tableheader ">Pack of</th>
+                                 <th class="tableheader ">Brand Name</th>
+                                 <th class="tableheader ">Item Type</th>
+                              </tr>
+                          </thead>
+          
+          
+                          <tbody>
+                             
+                                 <tr  class="table_Column" >
+                                     <td>DFV Summer</td>
+                                     <td>IO_4554_4456</td>
+                                     <td>6</td>
+                                     <td>Bota Box</td>
+                                     <td>Bag</td>
+                                 </tr>
+                                 <tr  class="table_Column" >
+                                  <td>DFV Summer</td>
+                                  <td>IO_4554_4456</td>
+                                  <td>6</td>
+                                  <td>Bota Box</td>
+                                  <td>Bag</td>
+                              </tr>
+                              <tr  class="table_Column" >
+                                <td>DFV Summer</td>
+                                <td>IO_4554_4456</td>
+                                <td>6</td>
+                                <td>Bota Box</td>
+                                <td>Bag</td>
+                            </tr>
+
+                                <tr  class="table_Column" >
+                                     <td>DFV Summer</td>
+                                     <td>IO_4554_4456</td>
+                                     <td>6</td>
+                                     <td>Bota Box</td>
+                                     <td>Bag</td>
+                                 </tr>
+
+                             </tbody>
+                         </table>
+                      
+                      </div>
+                      </lightning-card>
+                        <!-- PopUp Footer -->
+                        <footer class="slds-modal__footer">
+                          <lightning-button variant="brand" label="close" onclick={closeModal}></lightning-button>
+                        </footer>
+                       
+                   </lightning-card>
+               </div>
+              </section>
+                         <div class="slds-backdrop slds-backdrop_open"></div>
+              </lightning-card>
+              </template>
+       
+
+        
+        
+        
+ </template>

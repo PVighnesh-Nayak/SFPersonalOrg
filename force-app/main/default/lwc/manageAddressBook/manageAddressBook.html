@@ -1,0 +1,239 @@
+<template>
+    <lightning-card>
+        <div class="breadcrumbContents">
+            <ul class="breadcrumb">
+                <li><a>Home</a></li>
+                 <li><a>Admin</a></li>
+                <li><a>Manage Address Book</a></li>
+            </ul>
+         </div>
+<lightning-card>
+    <div>
+<!-- Create Address button -->
+        <lightning-button variant="destructive" label="Create Address" title="Destructive action" onclick={openCreatePopUp}  class="slds-m-left_x-small slds-align_absolute-center"></lightning-button>
+    </div>
+    <!-- Search -->
+    <lightning-input type="text" name="input1" label="Search " style="width: 35vw;
+    margin-left: 27vw;"  class="slds-align_absolute-center slds-media_center" ></lightning-input>
+    <lightning-button variant="destructive" label="Search" title="Destructive action" class="slds-m-left_x-small slds-align_absolute-center" style="margin-left: 432px;
+    margin-top: -31px;"></lightning-button>
+</lightning-card>
+
+<!-- table -->
+<div class="table-responsive scroll-box">
+     <lightning-card >
+            <table class="table-fixed">
+                <thead>
+                    <tr >
+                        <th class="tableheaderfirst ">Ship To Name</th>
+                        <th class="tableheader ">Ship To Company</th>
+                        <th class="tableheader ">Address</th>
+                        <th class="tableheader ">City</th>
+                        <th class="tableheader ">State</th>
+                        <th class="tableheader ">Zip</th>
+
+                        <th class="tableheader ">Active</th>
+                        <th class="tableheader ">Edit</th>
+                        <th class="tableheader ">Deactivate</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    <tr class="table_Column" >
+                        <td>Doug Anderson</td>
+                        <td>Young's Market</td>
+                        <td>6003 Gallup St</td>
+                        <td>Lakewood</td>
+                        <td>Idaho</td>
+                        <td>90713</td>
+                       <td>
+                            
+                         <lightning-icon icon-name="utility:check" class="slds-align_absolute-center" size="x-small"></lightning-icon>
+                           
+                     </td>
+                        <td>
+                         <lightning-icon icon-name="utility:edit" onclick={openEditPopUp} class="slds-align_absolute-center" size="x-small"></lightning-icon>
+                        </td>
+                        <td>
+                            
+                             <lightning-icon icon-name="utility:record_delete" class="slds-align_absolute-center" onclick={deactivateHandler} size="x-small"></lightning-icon>
+                            
+                       
+                        </td>
+                    </tr>
+                    <tr class="table_Column" >
+                        <td>Marco Giammattei</td>
+                        <td>Young's Market</td>
+                        <td>6003 Gallup St</td>
+                        <td>Lakewood</td>
+                        <td>Idaho</td>
+                        <td>90713</td>
+                       <td>
+                            
+                         <lightning-icon icon-name="utility:check" class="slds-align_absolute-center" size="x-small"></lightning-icon>
+                           
+                     </td>
+                        <td>
+                         <lightning-icon icon-name="utility:edit" onclick={openEditPopUp} class="slds-align_absolute-center" size="x-small"></lightning-icon>
+                        </td>
+                        <td>
+                            
+                             <lightning-icon icon-name="utility:record_delete" class="slds-align_absolute-center" onclick={deactivateHandler} size="x-small"></lightning-icon>
+                            
+                       
+                        </td>
+                    </tr>
+                    <tr class="table_Column" >
+                        <td>95 and Vine</td>
+                        <td>Young's Market</td>
+                        <td>6003 Gallup St</td>
+                        <td>Lakewood</td>
+                        <td>Idaho</td>
+                        <td>90713</td>
+                       <td>
+                            
+                         <lightning-icon icon-name="utility:check" class="slds-align_absolute-center" size="x-small"></lightning-icon>
+                           
+                     </td>
+                        <td>
+                         <lightning-icon icon-name="utility:edit" onclick={openEditPopUp} class="slds-align_absolute-center" size="x-small"></lightning-icon>
+                        </td>
+                        <td>
+                            
+                             <lightning-icon icon-name="utility:record_delete" class="slds-align_absolute-center" onclick={deactivateHandler} size="x-small"></lightning-icon>
+                            
+                       
+                        </td>
+                    </tr>
+                
+                </tbody>
+            </table>
+         </lightning-card>
+ </div>
+
+
+
+         <!-- To create new address -->
+
+         <template if:true={isModalOpen}>
+            <lightning-card>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container"> 
+    
+            <!-- Box LWC header here -->
+                 <header class="slds-modal__header">
+                     <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeCreatePopUp}>
+                      <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                      <span class="slds-assistive-text">Close</span>
+                    </button>
+                       <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create New Address</h2>
+                  </header>
+    
+            <!-- record form -->
+               <lightning-card>
+                   <!-- LWC Base component -->
+                     <lightning-record-edit-form object-api-name ="Address_Book__c">
+                      <!-- the field api name can be entered here -->
+
+                      <div class="slds-grid slds-grid_pull-padded-medium">
+                        <div class="slds-col slds-p-horizontal_medium">
+                            <p><lightning-input-field class="text-style-form dataText" field-name='Destination_Name__c'></lightning-input-field></p> 
+                            <p><lightning-input-field class="text-style-form dataText" field-name='Ship_To_Name__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="text-style-form dataText" field-name='Ship_To_Company__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="text-style-form dataText" field-name='Country__c'></lightning-input-field></p> 
+                            <p><lightning-input-field class="text-style-form dataText" field-name='City__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="checkbox" field-name='Active__c'></lightning-input-field></p> 
+
+                        </div>
+                        <div class="slds-col slds-p-horizontal_medium">
+                            <p><lightning-input-field class="email" field-name='Email__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="phone" field-name='Phone__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="text-style-form dataText" field-name='Address__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="text-style-form dataText" field-name='State__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="text-style-form dataText" field-name='Zip__c'></lightning-input-field></p>
+                            <p><lightning-input-field class="text-style-form dataText" field-name='Fax__c'></lightning-input-field></p>
+                        </div>
+
+                      </div>
+                    
+                      <!-- PopUp Footer -->
+                      <footer class="slds-modal__footer">
+                           <lightning-button type="submit" variant ="brand" name ="save" label="Submit"></lightning-button>
+                           <lightning-button class="slds-m-around_xx-small" variant ="brand" label="Cancel"  onclick={closeCreatePopUp}></lightning-button>
+                      </footer>
+                     </lightning-record-edit-form>
+                 </lightning-card>
+             </div>
+            </section>
+                       <div class="slds-backdrop slds-backdrop_open"></div>
+            </lightning-card>
+            </template>
+
+<!-- popup to edit an item -->
+<template if:true={isEditModal}>
+
+    <lightning-card>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container"> 
+
+        <!-- Box LWC header here -->
+             <header class="slds-modal__header">
+                 <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeEditPopUp}>
+                  <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                  <span class="slds-assistive-text">Close</span>
+                </button>
+                   <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Edit Address</h2>
+              </header>
+
+        <!-- record form -->
+           <lightning-card>
+            <!-- LWC Base component -->
+            <lightning-record-edit-form record-id={recordId} object-api-name="Address_Book__c"
+            onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+            <div class="slds-grid slds-grid_pull-padded-medium">
+                <div class="slds-col slds-p-horizontal_medium">
+                    <p><lightning-input-field class="text-style-form dataText" field-name='Destination_Name__c'></lightning-input-field></p> 
+                    <p><lightning-input-field class="text-style-form dataText" field-name='Ship_To_Name__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="text-style-form dataText" field-name='Ship_To_Company__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="text-style-form dataText" field-name='Country__c'></lightning-input-field></p> 
+                    <p><lightning-input-field class="text-style-form dataText" field-name='City__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="checkbox" field-name='Active__c'></lightning-input-field></p> 
+
+                </div>
+                <div class="slds-col slds-p-horizontal_medium">
+                    <p><lightning-input-field class="email" field-name='Email__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="number" field-name='Phone__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="text-style-form dataText" field-name='Address__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="text-style-form dataText" field-name='State__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="text-style-form dataText" field-name='Zip__c'></lightning-input-field></p>
+                    <p><lightning-input-field class="text-style-form dataText" field-name='Fax__c'></lightning-input-field></p>
+                </div>
+
+              </div>
+            
+
+
+            <!-- PopUp Footer -->
+        <footer class="slds-modal__footer">
+        <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update">
+        </lightning-button>
+        <lightning-button class="slds-m-around_xx-small" variant ="brand" label="Cancel"  onclick={closeEditPopUp}></lightning-button>
+    </footer>
+    </lightning-record-edit-form>
+              
+             </lightning-card>
+         </div>
+        </section>
+                   <div class="slds-backdrop slds-backdrop_open"></div>
+        </lightning-card>
+</template>
+</lightning-card>
+</template>

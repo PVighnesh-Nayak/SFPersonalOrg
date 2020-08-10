@@ -1,0 +1,68 @@
+<template>
+    <lightning-card>
+        <div>
+            <template if:false={assignedVariable}>
+               <p class="errorMessage">The entered quantity is exceeding the available quantity</p>
+             </template>
+        <template if:false={usersDetails}>
+         <div class="scroll-box">
+            <table class="table-fixed" style="table-layout:fixed;width:max-content!important;">
+                <thead>
+                    <tr>
+                        <th class=" tableheader sticky-header_items">Item Number</th>
+                        <th class="tableheader  sticky-header_Name">Item Name</th>
+                        <th class=" tableheader sticky-header_Available">Available Inventory</th>
+                        <th class="tableheader sticky-header_Allocated">Allocated Inventory</th>
+                        
+                        <template for:each={selectedUserName.data} for:item="user">
+                            <th key={user.Id}  class="tableheader sticky-header_Allocated">
+                                <p >{user.Name}</p>
+                            </th>
+                     </template>
+                    </tr>
+                </thead>
+             <tbody>
+            <template if:false={itemDetails}>
+            <template for:each={getListPosItems.data} for:item="selectedItems">
+                <tr  key={selectedItems.Id} class="table_Column" >
+                 <td title={selectedItems.ItemNumber}>{selectedItems.ItemNumber}</td>
+                 <td title={selectedItems.ItemName}>{selectedItems.ItemName}</td>
+                 <td title={selectedItems.AvaliableInventory}>{selectedItems.AvaliableInventory}</td>
+                 <td title={selectedItems.AllocatedInventory}>{selectedItems.AllocatedInventory}</td>
+
+                 <template for:each ={selectedItems.UserWithAllocatedQuantityList} for:item="usersList">
+                    <td key ={usersList.Id} class="table_Column">
+                       <div class="userName" >
+                           {usersList.UserName}
+                       </div>
+                       <br/>
+                       <lightning-input type="number"  style="width:5rem;text-align:center;
+                         position: sticky; margin-top: -20px;margin-left:48px"
+                         value={usersList.AssignedQuantity} 
+                         onchange={assignedEvent}
+                         formatter="number" 
+                         onfocusout={allocationEvent} 
+                         data-id={usersList.UserItemId}>
+                        </lightning-input>
+
+
+                        <!-- <template if:true={assignedVariable}>
+                            The value is present
+                        </template> -->
+                       
+
+                    </td>
+                 </template>
+                </tr>
+            </template>
+            </template>
+            </tbody>
+            </table>
+        </div>
+        </template>
+        </div>
+ <template if:true={usersDetails}>
+     <p>Not this</p>
+  </template>     
+</lightning-card>
+</template>

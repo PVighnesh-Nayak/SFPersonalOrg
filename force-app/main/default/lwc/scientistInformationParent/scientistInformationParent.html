@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="scientist Information">
+        <lightning-layout>
+            <lightning-layout-item size="4" padding="around-small">
+                <ul>
+                    <template for:each={scientistData} for:item="scientist">
+                        <li key={scientist.scientistName} style="padding: 15px;">
+                            <c-scientist-information-child scientist-information={scientist} onscientistselect={onSelectHandler}></c-scientist-information-child>
+                        </li>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="8" padding="around-small" style="color: chocolate;margin-left: -69px;">
+
+                The scientist you choice:{selectedScientistInformation}
+                </lightning-layout-item>
+
+        </lightning-layout>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,26 @@
+/* css class to change color of the data present in the div */
+.Display-Color{
+    text-align: center;
+    color: crimson;
+}
+.Display-Name-Color{
+    text-align: center;
+    color: darkblue;
+}
+.Display-Discription-Color{
+    text-align: center;
+    color: darkred;
+}
+.Display-Catagory-Color {
+    text-align: center;
+    color: darkviolet;
+}
+.Display-Price-Color
+{
+    text-align: center;
+    color: black;
+}
+.Display-Material-Color {
+    text-align: center;
+    color: chartreuse;
+}

@@ -1,0 +1,40 @@
+<template>
+    <template if:false={showSearchComponent}>
+    <lightning-card>
+        <lightning-card>
+            <div class="breadcrumbContents">
+                <ul class="breadcrumb">
+                    <li><a>Home</a></li>
+                    <li><a>Inventory Order</a></li>
+                </ul>
+             </div>
+             <div >
+                <template if:false={viewCartSize}>
+                    <button class="slds-button slds-button_neutral  slds-float_right viewcart_button_style" onclick={openNewComponent} title="search" >
+                        View Cart({viewCartVariable})</button>
+                       
+                   </template> 
+                </div>
+                <br/>
+
+   
+ <!-- <lightning-button label={viewCartValue} title="View cart" class="slds-m-left_x-small slds-float_right  viewcart_button_style" style="
+                    margin-top: -31px;"></lightning-button> --> 
+                    <c-jfw-place-order-search-and-filters onselectedbrandevent={brandIdEvent} onselectitemtypeevent={itemTypeIdEvent} onselectsortbyevent={getSortbyIdEvent} onsendsearchdatatoparent={searchEventHandler}></c-jfw-place-order-search-and-filters>
+                    <c-jfw-place-order-add-remove-items get-brand-id={brandId} get-item-type-id={itemTypeId} get-sort-by={sortByValue} get-search-value={searchValue}></c-jfw-place-order-add-remove-items> -->
+            <c-pagination-testing></c-pagination-testing>
+             
+          
+            </lightning-card> -->
+
+<!-- <c-jfw-shopping-cart-page></c-jfw-shopping-cart-page> -->
+
+</lightning-card>
+</template>
+
+<template if:true={showSearchComponent}>
+    <br/>
+    <c-jfw-shopping-cart-page></c-jfw-shopping-cart-page>
+</template>
+
+</template>

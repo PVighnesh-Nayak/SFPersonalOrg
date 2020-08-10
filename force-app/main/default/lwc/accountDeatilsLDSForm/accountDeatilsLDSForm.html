@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title = "Account Manager Via Forms" >
+            <lightning-layout>
+                <lightning-layout-item size ="6" padding="around-small">
+                    <lightning-card class="card-design" title="Create A New Account">
+                        <!-- the object api name can be entered here only -->
+                        <lightning-record-edit-form object-api-name ="Account" onsuccess={successHandler}>
+                            <!-- the field api name can be entered here -->
+                        <p><lightning-input-field class="text-style-form" field-name='Name'></lightning-input-field></p> 
+                           <p><lightning-input-field class="text-style-form" field-name='Phone'></lightning-input-field></p> 
+                           <p><lightning-input-field class="text-style-form" field-name='Website'></lightning-input-field></p> 
+    
+                           <p>
+                               <lightning-button type="submit" variant ="brand" name ="save" label="Create Account"></lightning-button>
+                           </p>
+                        </lightning-record-edit-form>
+                    </lightning-card>
+                </lightning-layout-item>
+    
+                <lightning-layout-item size ="6" padding="around-small">
+                    <lightning-card title="View An Account">
+                        <!-- it fetch record id ,object api name -->
+                          <lightning-record-view-form record-id={recordId} object-api-name="Account">
+                              <!-- to show the value to user we use output field -->
+                              <div class="slds-box">
+                                  <p>
+                                      <!-- here we need to pass the api name we need to fetch -->
+                                      <lightning-output-field class="text-style-form" field-name="Name"></lightning-output-field>
+                                      <lightning-output-field class="text-style-form" field-name="Phone"></lightning-output-field>
+                                      <lightning-output-field class="text-style-form" field-name="Website"></lightning-output-field>
+                                  </p>
+                              </div>
+                                
+                    
+    
+                          </lightning-record-view-form>
+                    </lightning-card>
+                </lightning-layout-item>
+                
+            </lightning-layout>
+        </lightning-card>
+    </template>

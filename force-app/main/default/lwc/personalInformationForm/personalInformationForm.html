@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+       <lightning-layout multiple-rows>
+           <lightning-layout-item>
+               <lightning-input type="Text" name="firstName" label="First Name" ></lightning-input>
+               <lightning-input type="Text" name="lastName" label="Last Name"  ></lightning-input>
+               <lightning-input type="Text" name="address" label="Address" ></lightning-input>
+               <lightning-input type="Text" name="phoneNumber" label="Phone Number" ></lightning-input>
+               <lightning-input type="Text" name="qualification" label="Qualification" ></lightning-input>
+               <lightning-input type="Text" name="yearOfExperience" label="Year of experience" ></lightning-input>
+           </lightning-layout-item>
+        </lightning-layout>
+               <lightning-button-group>
+                <lightning-button label ="Submit" onclick={submitFormEventButton}> the data is suubmitted : {submit} </lightning-button>
+            </lightning-button-group>
+            <lightning-button label ="Reveiw Information" onclick={reviewResults}> </lightning-button>
+            <lightning-card>
+                <p>{reviewResults}</p>
+            </lightning-card>
+    </lightning-card>
+</template>

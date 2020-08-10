@@ -1,0 +1,17 @@
+.card-design
+{
+   color: brown;
+   font-size: large;
+   font-weight: 800;
+   font-style: oblique;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.text-style{
+    color: black;
+    font-size: medium;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 800;
+}

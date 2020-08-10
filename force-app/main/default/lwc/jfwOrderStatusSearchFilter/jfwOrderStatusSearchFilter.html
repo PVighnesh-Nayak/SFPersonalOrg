@@ -1,0 +1,10 @@
+<template>
+        <div class="c-container">
+            <lightning-input type="search" label="Search " style="width: 30vw;
+            margin-left: 27vw;" class="slds-align_absolute-center slds-media_center" placeholder="Enter Order Number,Ship to Name,Ship to Comapany,city" onchange={searchOrder} value={searchedKeyword} ></lightning-input>
+        
+              <button class="slds-button slds-button_neutral slds-align_absolute-center search_button_style"  
+              title="search" onclick={searchOrderEvent} >Search</button>
+              <br/>
+        </div>
+</template>

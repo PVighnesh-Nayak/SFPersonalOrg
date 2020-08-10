@@ -1,0 +1,14 @@
+.title-style{
+    color: chocolate;
+    font-weight: 800;
+    font-style: italic;
+    font-family: sans-serif;
+    background-color: darkgray;
+    
+}
+.data-field{
+    color: dimgray;
+    font-weight: bold;
+    font-size: medium;
+    font-style: italic;
+}

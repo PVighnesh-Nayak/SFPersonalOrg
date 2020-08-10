@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- To bind the componets to the salesforce version --><apiVersion>47.0</apiVersion>
+    <!-- Checks if the componets are useful or not --><isExposed>true</isExposed>
+    <!-- list of targets where the lightning component is supported such has home page,app page --><targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>

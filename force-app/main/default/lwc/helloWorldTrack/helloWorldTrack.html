@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Hello World LWC">
+
+        <!-- If we want to display property value in markup it should have {}  -->
+        <div class="greeting-class">Hello {dynamicGreeting}</div>
+         
+        <lightning-input label="Greeting" class="greeting-class" onchange={GreetingChangeHandler}>
+ 
+        </lightning-input>
+    </lightning-card>
+</template>

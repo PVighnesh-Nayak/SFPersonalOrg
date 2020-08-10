@@ -1,0 +1,133 @@
+/* scroll bar */
+.scroll-box {
+  height: 360px;
+  width: 98%;
+  margin-left: 20px;
+  overflow-y: auto;
+  overflow-x: scroll;
+}
+
+ .scroll-box::-webkit-scrollbar {
+      width: .4em;
+      height:11px;
+  }
+  
+  .scroll-box::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      overflow: visible;
+      background: #572a31;
+  }
+  
+  
+    .table_Column {
+      border-bottom: 1px solid #dee2e6;
+       padding:8px;
+       height: 45px;
+    }
+  
+  
+    /* .tableheader {
+    
+      color: white;
+    background-color:#572a31;
+    /* position: sticky !important;  */
+    /* top:0;
+    z-index: 99;
+    height: 30px;
+    width: 155px;
+   text-align: center; 
+   
+    } */ 
+  
+    .tableheaderfirst {
+    
+      color: white;
+    background-color:#572a31;
+    /* position: sticky !important;  */
+    top:0;
+    z-index: 9;
+    height: 30px;
+   text-align: left; 
+   
+    }
+
+    caption, th, td {
+      text-align: center !important;
+  }
+
+  .headerText{
+    font-size: small;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+
+  .sticky-header_items {   
+     position: sticky;
+    left: 0;
+    z-index: 9;
+    /* height: 30px; */
+    /* width: 20px; */
+      /* color: white;
+    background-color:#572a31; */
+/*  
+    height: 30px;
+    width: 155px; */
+   /* text-align: center;  */
+   
+  
+}
+.sticky-header_Name {   
+  position: sticky;
+ left: 0;
+ z-index: 9;
+ /* z-index: 99;
+ height: 30px;
+ /* width: 20px; */
+ /* color: white;
+background-color:#572a31;
+text-align: center;  */
+}
+.sticky-header_Available {   
+  position: sticky;
+ left: 0;
+ /* z-index: 9; */
+ z-index: 9;
+ /* color: white; */
+ /* height: 30px;
+ /* width: 20px; */
+/* background-color:#572a31;
+text-align: center;  */ 
+}
+
+.sticky-header_Allocated{   
+  position: sticky;
+ left: 0;
+ /* z-index: 9; */
+ z-index: 9;
+ /* height: 30px;
+ /* width: 20px; */
+ /* color: white;
+background-color:#572a31;
+text-align: center;   */
+}
+.userName{
+ text-align: center;
+    font-weight: 600;
+}
+.tableheader {
+  
+  color: white;
+background-color:#572a31;
+position: sticky !important; 
+top:0;
+z-index: 99;
+height: 30px;
+text-align: center; 
+
+}
+.errorMessage{
+  text-align: center;
+  color: red;
+  font-weight: 700;
+  margin-bottom: 20px;
+}

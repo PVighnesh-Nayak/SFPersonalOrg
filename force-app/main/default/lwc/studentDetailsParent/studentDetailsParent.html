@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Student Details">
+        <lightning-layout>
+            <lightning-layout-item>
+                 <ul>
+                     <template for:each={studentsInformation} for:item="student">
+                         <li key ={student.studentName}>
+                           <c-student-details-child students-records={student}>
+                               
+                           </c-student-details-child>
+
+                         </li>
+                         
+                     </template>
+                 </ul>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

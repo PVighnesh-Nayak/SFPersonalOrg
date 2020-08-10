@@ -1,0 +1,34 @@
+<template>
+    <div class="c-container">
+    <lightning-card>
+        <lightning-input type="search" label="Search " style="width: 30vw;
+        margin-left: 27vw;" value={searchedKeyword} onchange={searchAvailableUsers} class="slds-align_absolute-center slds-media_center" placeholder="Search based on Item Name and Item Number" ></lightning-input>
+        <!-- <lightning-button label="Search" title="search" class="slds-m-left_x-small slds-align_absolute-center" style="margin-left: 334px;
+        margin-top: -31px;"></lightning-button> -->
+          <button class="slds-button slds-button_neutral slds-align_absolute-center search_button_style"  
+          title="search" onclick={searchEvent}>Search</button>
+    
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size_4-of-12">
+          
+                <lightning-combobox class="combobox slds-align_absolute-center slds-listbox__option slds-media_center slds-media_small"
+                style ="font-size:small; margin-right: 20px;" label="Brand" dropdown-alignment="right"
+                placeholder="Brand" value={value} options={brandListToDisplay} onchange={handleChangeForBrand} ></lightning-combobox> 
+            
+            </div>
+          <div class="slds-col slds-size_4-of-12">
+                <lightning-combobox class="combobox slds-align_absolute-center slds-listbox__option slds-media_center slds-media_small"
+                style ="font-size:small;margin-left: 96px;" dropdown-alignment="right"  label="Item Type"
+                placeholder="Item Type" value={value} options={itemTypeListToDisplay} onchange={handleChangeForItemType} ></lightning-combobox> 
+            
+            </div>
+          <div class="slds-col slds-size_4-of-12">
+                <lightning-combobox class="combobox slds-align_absolute-center slds-listbox__option slds-media_center slds-media_small"
+                style ="font-size:small;    margin-left: -4px;" dropdown-alignment="right"  label="Sort By"
+                placeholder="Sort By" value={value} options={sortByValue} onchange={handleChangeForSortBy} ></lightning-combobox> 
+            </div>
+          </div>
+    </lightning-card>
+    
+</div>
+</template>

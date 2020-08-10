@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title ="Employee Details">
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small" >
+                <lightning-card>
+                    <lightning-input label="Employee Name" type="text" name="Employee Name" onchange={employeeNameChangeHandle}></lightning-input>
+                    <lightning-input label="Company Name"  type="text" name="Comapny Name" onchange={companyNameChangeHandler}></lightning-input>
+                    <lightning-input label ="Employee Phone Number" type="phone" name="Phone Number"  onchnage={employeePhoneNumberChangeHandler}></lightning-input>               
+                    <lightning-input label ="Employee Department" type="text" name="Employee Department" onchnage={departmentChangeHandler}></lightning-input>
+                    </lightning-card>
+                    <lightning-button-group>
+                    <lightning-button type="submit" label="Submit Form" onclick={submitForm}>
+                    </lightning-button>
+                </lightning-button-group>
+            </lightning-layout-item>
+        
+    
+    <lightning-layout-item size="6" padding="around-small" >
+
+    </lightning-layout-item>
+</lightning-layout>
+</lightning-card>
+</template>

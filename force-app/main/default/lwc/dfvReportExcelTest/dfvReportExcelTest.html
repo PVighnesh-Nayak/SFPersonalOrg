@@ -1,0 +1,35 @@
+<!--
+  @File Name          : dfvProgramOrderItemSummaryReportComponent.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 8/5/2020, 7:53:36 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    8/5/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <!-- Author : Vanditha and Vignesh Date:April 29 2020 
+        Aim : To display the Program Order Item Summary Report-->
+     <!-- to display the breadcrumbs -->
+     <div class="breadcrumbContents">
+         <ul class="breadcrumb">
+             <li><a>Home</a></li>
+              <li><a>Custom Report</a></li>
+             <li><a>Order Item Summary Report</a></li>
+         </ul>
+      </div>
+       <!-- to display the UI in card form -->
+     
+       <lightning-card>
+     
+          <a target="_self"  class="slds-button button_color slds-align_absolute-center"  download="ProgramOrderItemSummaryReport.csv" disabled={disabledCondition} href={hrefdata} onclick={exportToCSV}  
+            style="margin-right: 657px;color:white;width: max-content;    margin-top: 0px;
+            margin-bottom: 10px;">Download Report</a>     
+          </lightning-card>
+       
+ 
+ <br/>
+
+</template>

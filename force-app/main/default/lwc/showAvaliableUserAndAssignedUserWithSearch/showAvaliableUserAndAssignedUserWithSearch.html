@@ -1,0 +1,36 @@
+<template>
+    <lightning-card>
+        <div class="slds-align_absolute-center">
+
+            <lightning-input type="Search" class="inputField_style" label="Search Available Users" value={searchedKeyword} onchange={searchAvailableUsers}></lightning-input>
+            <lightning-button label="Search" varient="brand"  class="searchIcon" value={searchedKeyword} onclick={serachEvent}></lightning-button>
+        </div>
+    </lightning-card>
+    
+    <lightning-card>
+        <div class="dualbox_Style" >
+            <template if:false={usersList}>
+                <template if:false={searchHtml}>
+                <lightning-dual-listbox name="languages" source-label="Available Users " selected-label="Allocation Assigned Users" options={getValue} value={getResult} disable-reordering="true"
+                                        onchange={handleChange}></lightning-dual-listbox>
+                                    </template>
+</template>
+<template if:true={searchHtml}>
+                <lightning-dual-listbox name="languages" source-label="Available Users " selected-label="Allocation Assigned Users" options={getSearchedValue} value={getSearchedResult} disable-reordering="true"
+                                        onchange={handleChange}></lightning-dual-listbox>
+            </template>
+
+</div>
+<div>
+    <!-- <lightning-button type="submit" style="margin-top: 11px" class="slds-align_absolute-center" onclick={sendValueEvent} varient="brand" label="Save"></lightning-button> -->
+</div>
+</lightning-card>
+<lightning-button type="submit" style="margin-top: 11px" class="slds-align_absolute-center" onclick={sendValueEvent} varient="brand" label="Save"></lightning-button>
+
+<template if:true={usersList}>
+        <p>get the data</p>
+    </template>
+<template if:false={searchAvailableUsers}>
+        <p>get the data</p>
+    </template>
+</template>

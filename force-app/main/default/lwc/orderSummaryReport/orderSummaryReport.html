@@ -1,0 +1,188 @@
+<template>
+    <!-- to display the UI in card form -->
+    <lightning-card title="Order Summary Report">
+
+        <!-- To get the select field we use combobox in lwc -->
+        <lightning-combobox class="combobox slds-align_absolute-center"  label="Select Program" name="orderStatus" value={value}
+        placeholder="Select"
+        options={options}></lightning-combobox>
+        <br>
+
+        <!-- button to download the pdf -->
+        
+        <!-- <lightning-button  label="Download pdf" title="downloadPDF"  class="slds-align_absolute-center"></lightning-button>
+        <br> -->
+
+        <button class="slds-button slds-button_neutral slds-align_absolute-center button_color" >Download pdf
+            <svg class="slds-button__icon slds-button__icon_right" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#download"></use>
+            </svg>
+          </button>
+          <br>
+         
+<div class="slds-scrollable">
+ <!-- tables -->
+    <table >
+        <thead>
+            <tr>
+              <th class="tableheader">
+                  <div class="table_label">Program Name</div>
+                </th>
+              <th class="tableheader">
+                <div class="table_label">POS Item: Brand: Brand Name</div>
+            </th>
+              <th class="tableheader">
+                <div class="table_label">Order Name</div>
+            </th>
+              <th class="tableheader">
+                <div class="table_label">Division</div>
+            </th>
+              <th class="tableheader">
+                <div class="table_label">POS Item: Vendor</div>
+            </th>
+              <th class="tableheader">
+                  <div class="table_label">POS Item: Type of Item: Item Type</div>
+            </th>
+              <th class="tableheader">
+                  <div class="table_label">POS Item: Item No</div>
+            </th>
+              <th class="tableheader">
+                  <div class="table_label">Item Name</div>
+            </th>
+              <th class="tableheader">
+                  <div class="table_label">POS Item: Item Descrption</div>
+            </th>
+              <th class="tableheader">
+                  <div class="table_label">POS Item: Pack Of</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Quantity</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">POS Item: Price</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Total Line Amount</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Ship To Name</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Ship To Company</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Address Book: Address</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Ship To City</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Address Book: State Code</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Address Book: Zip</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Address Book: Phone</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Address Book: Email</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Ord Status</div>
+            </th>
+               <th class="tableheader">
+                   <div class="table_label">Created Date</div>
+            </th> 
+             
+            </tr>
+              
+        </thead>
+        <tbody>
+            <tr>  
+            <td>Holiday</td>
+            <td>Z. Alexander Brown</td>
+            <td>IO_0070_0231</td>
+            <td>Provenzano</td>
+            <td>Northeast</td>
+            <td>Graphics</td>
+            <td>Shelf Talker</td>
+            <td>N6513625</td>
+            <td>Scotch Barrel Chardonnay Launch </td>
+            <td>25</td>
+            <td>1</td>
+            <td>$2.75</td>
+            <td>$2.75</td>
+            <td>Jordan Catino</td>
+            <td>Delicato</td>
+            <td>8 Napa Court</td>
+            <td>Niskayuna</td>
+            <td>NY</td>
+            <td>12309</td>
+            <td>5182650473</td>
+            <td>jordan.catino@delicato.com</td>
+            <td>Confirmed</td>
+            <td>3/30/2020</td>
+        
+        </tr> 
+
+
+        <tr>  
+            <td>Holiday</td>
+            <td>Z. Alexander Brown</td>
+            <td>IO_0070_0231</td>
+            <td>Provenzano</td>
+            <td>Northeast</td>
+            <td>Graphics</td>
+            <td>Shelf Talker</td>
+            <td>N6513625</td>
+            <td>Scotch Barrel Chardonnay Launch </td>
+            <td>25</td>
+            <td>1</td>
+            <td>$2.75</td>
+            <td>$2.75</td>
+            <td>Jordan Catino</td>
+            <td>Delicato</td>
+            <td>8 Napa Court</td>
+            <td>Niskayuna</td>
+            <td>NY</td>
+            <td>12309</td>
+            <td>5182650473</td>
+            <td>jordan.catino@delicato.com</td>
+            <td>Confirmed</td>
+            <td>3/30/2020</td>
+         
+        </tr> 
+
+
+        <tr>  
+            <td>Holiday</td>
+            <td>Z. Alexander Brown</td>
+            <td>IO_0070_0231</td>
+            <td>Provenzano</td>
+            <td>Northeast</td>
+            <td>Graphics</td>
+            <td>N6513625</td>
+            <td>Scotch Barrel Chardonnay Launch </td>
+            <td>Shelf Talker</td>
+            <td>25</td>
+            <td>1</td>
+            <td>$2.75</td>
+            <td>$2.75</td>
+            <td>Jordan Catino</td>
+            <td>Delicato</td>
+            <td>8 Napa Court</td>
+            <td>Niskayuna</td>
+            <td>NY</td>
+            <td>12309</td>
+            <td>5182650473</td>
+            <td>jordan.catino@delicato.com</td>
+            <td>Confirmed</td>
+            <td>3/30/2020</td>
+        
+        </tr>      
+        </tbody>
+    </table>
+</div>
+    </lightning-card>
+</template>

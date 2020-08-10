@@ -1,0 +1,95 @@
+<template>
+    <div class="c-container">
+        <div>
+            <lightning-card>
+                <template if:false={posItemsData}>
+                    <lightning-layout multiple-rows="true" >
+                        <template for:each={positemDetails} for:item="posItems">
+                            <lightning-layout-item size="3" padding="around-small" key={posItems.key} >
+                                <template if:false={posItems.isItemAddedToCart}>
+                             <div class="page-section page-right on_hover_layout_style">
+                                <div >
+                                     <b class="slds-align_absolute-center" title={posItems.ItemName}>{posItems.ItemName}</b>
+                                 </div>
+                                 <br/>
+                                 <div>
+                                                   
+                                    <img style="height: 130px;" src={jfwImage2020}/>
+                                </div>
+                                <br/>
+                                <div class="slds-truncate">
+                                    <div class="slds-p-left_small slds-text-body_small text_font_weight">
+                                        <span class="item_text_style" title={posItems.ItemNumber}>Item Number:{posItems.ItemNumber}</span><br/>
+                                        <span class="item_text_style" title={posItems.Brand}>Brand Name:{posItems.Brand}</span><br/>
+                                        <span class="item_text_style" title={posItems.ItemType}>Item Type:{posItems.ItemType}</span><br/>
+                                        <span class="item_text_style" title={posItems.PackOf}> Pack Of:{posItems.PackOf}</span><br/>
+                                        <span class="item_text_style" title={posItems.Price}> Price: ${posItems.Price}</span><br/>
+                                        <span class="item_text_style"> Approval Required:Not Needed</span><br/>
+                                        <span class="item_text_style" title={posItems.LogicalInventory}> Available stock :{posItems.LogicalInventory}</span><br/>
+                                        <br/>
+                                        {inventoryValue}
+                                        <template if:true={inventoryValue}>
+                                            <button disabled class="slds-button slds-button_neutral slds-button_stretch slds-align_absolute-center add_to_cart_button_style" type="button" title="search"  >Add Item To Cart</button>
+                                        </template>
+                                        <div >
+                                            <button  class="slds-button slds-button_neutral slds-button_stretch slds-align_absolute-center add_to_cart_button_style"  title="search" onclick={addItemToCartEvent} data-id={posItems.Id} >Add Item To Cart</button>
+                                        </div>
+<div>
+  
+</div>
+</div>
+</div>
+                             </div>
+                            </template>
+
+                            <template if:true={posItems.isItemAddedToCart}>
+                                <div class="page-section page-right on_hover_red_style">
+                                   <div >
+                                        <b class="slds-align_absolute-center" title={posItems.ItemName}>{posItems.ItemName}</b>
+                                    </div>
+                                    <br/>
+                                    <div>
+                                                      
+                                       <img style="height: 130px;" src={jfwImage2020}/>
+                                   </div>
+                                   <br/>
+                                   <div class="slds-truncate">
+                                       <div class="slds-p-left_small slds-text-body_small text_font_weight">
+                                           <span class="item_text_style" title={posItems.ItemNumber}>Item Number:{posItems.ItemNumber}</span><br/>
+                                           <span class="item_text_style" title={posItems.Brand}>Brand Name:{posItems.Brand}</span><br/>
+                                           <span class="item_text_style" title={posItems.ItemType}>Item Type:{posItems.ItemType}</span><br/>
+                                           <span class="item_text_style" title={posItems.PackOf}> Pack Of:{posItems.PackOf}</span><br/>
+                                           <span class="item_text_style" title={posItems.Price}> Price: ${posItems.Price}</span><br/>
+                                           <span class="item_text_style"> Approval Required:Not Needed</span><br/>
+                                           <span class="item_text_style" title={posItems.LogicalInventory}> Available stock :{posItems.LogicalInventory}</span><br/>
+   
+                                           <br/>
+                                            <div >     
+                                            <button class="slds-button slds-button_neutral slds-button_stretch slds-align_absolute-center remove_from_cart_button_style"  title="search" onclick={removeItemToCartEvent} data-id={posItems.Id} >Remove Item From Cart</button>
+                                           </div>
+   <div>
+     
+   </div>
+   </div>
+   </div>
+                                </div>
+                               </template>
+
+
+</lightning-layout-item>
+</template>
+
+</lightning-layout>
+</template>
+
+
+</lightning-card>
+<div>
+    <template if:true={posItemsData}>
+                    <p>No POS Item Present</p>
+                </template>
+</div>
+</div>
+
+</div>
+</template>

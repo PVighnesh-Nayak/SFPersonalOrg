@@ -1,0 +1,20 @@
+<!-- templete tag is the fundamental building blocks of componenent html,it allows to store the piece of html -->
+
+<template>
+
+    <!-- lightning card is the slds styling component -->
+    <lightning-card title="Vehicles">
+
+        <!-- div to display the vehicle discriptipon with the css class -->
+        <div>
+            <!-- If we want to display property value from js in markup it should have {}  -->
+           <div class="Display-Color slds-m-bottom_medium"> Vehicle-Type : {vehicleType} </div> 
+           <div class="Display-Name-Color slds-m-bottom_medium">Name : {name}</div> 
+           <div class="Display-Discription-Color slds-m-bottom_medium"> Description : {description}</div>
+           <div class="Display-Catagory-Color slds-m-bottom_medium">Catagory :  {catagory}</div> 
+           <div class="Display-Price-Color slds-m-bottom_medium"> Price : {price}</div>
+            <div class="Display-Material-Color slds-m-bottom_medium">Material : {material}</div>
+            <div><img src={pictureUrl}/></div>
+        </div>
+    </lightning-card>
+</template>

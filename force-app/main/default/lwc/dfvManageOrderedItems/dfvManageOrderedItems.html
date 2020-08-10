@@ -1,0 +1,36 @@
+<template>
+    <lightning-card>
+        <lightning-card>
+            <div class="breadcrumbContents">
+                <ul class="breadcrumb">
+                    <li><a>Home</a></li>
+                     <li><a>Admin</a></li>
+                    <li><a>Manage Ordered Items</a></li>
+                </ul>
+             </div>
+            </lightning-card>
+            <!-- child component to get the program list -->
+            <c-dfv-manage-order-program-list onselectprogramevent={handleChange} ></c-dfv-manage-order-program-list>
+            <template if:true={programDetails}>
+                <!-- child component of withheld items -->
+                <c-dfv-manage-order-withheld-items get-program-id={programName}></c-dfv-manage-order-withheld-items>
+                <!-- child component available items -->
+                <c-dfv-manage-order-available-items onselectedavailableitemevent={pageRefreshEvent} get-program-id={programName}></c-dfv-manage-order-available-items>
+            </template>
+
+        <!-- <template if:false={programDetails}>
+            <p>Please select the program</p>
+        
+        </template> -->
+        <template if:true={isRefreshList}>
+            <!-- child component of withheld items -->
+          
+            <c-dfv-manage-order-withheld-items get-program-id={programName}></c-dfv-manage-order-withheld-items>
+            <!-- child component available items -->
+            <c-dfv-manage-order-available-items onselectedavailableitemevent={pageRefreshEvent} get-program-id={programName}></c-dfv-manage-order-available-items>
+        </template>
+    </lightning-card>
+    
+</template>
+
+<!--     isRefreshList -->

@@ -1,0 +1,21 @@
+<template>
+    <template if:false={showNewComponent}>
+        <div class="breadcrumbContents">
+            <ul class="breadcrumb">
+                <li><a>Home</a></li>
+                <li><a>Shopping Cart</a></li>
+            </ul>
+         </div>
+         <br/>
+       
+             <c-jfw-shopping-cart-buttons onnewcomponent={callNewComponent}></c-jfw-shopping-cart-buttons>
+             <c-jfw-shopping-cart-items onorderid={receiveOrderId}></c-jfw-shopping-cart-items>
+            
+    </template>  
+    <template if:true={showNewComponent}>
+        <div>
+            <c-jfw-preview-order-page get-order-id={orderId}></c-jfw-preview-order-page>
+        </div>
+    </template>
+
+</template>

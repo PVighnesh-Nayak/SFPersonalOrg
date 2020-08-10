@@ -1,0 +1,14 @@
+<template>
+    <lightning-file-upload
+            label="Attach receipt"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={myRecordId}
+            onuploadfinished={handleUploadFinished}
+            multiple>
+    </lightning-file-upload>
+    <lightning-card>
+        <p>This component is not supported in Lightning Out or standalone apps, and displays as a disabled input. Additionally, if the Don't allow HTML uploads as attachments or document records security setting is enabled for your organization</p>
+        <p>We recommend that you add one or more record types to the ContentVersion object in your org. When record types are present, the file uploader enables you to provide details about the file and shows any error messages from the server. This feature is useful if your org uses Apex triggers or validation rules for file uploads, or has required custom fields in the ContentVersion object.</p>
+    </lightning-card>
+</template>

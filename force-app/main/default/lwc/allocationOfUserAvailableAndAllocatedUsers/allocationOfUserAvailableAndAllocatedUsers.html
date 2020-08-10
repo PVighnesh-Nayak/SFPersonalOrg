@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <div class="dualbox_Style" >
+            <template if:false={usersList}>
+
+            
+                <lightning-dual-listbox name="languages" source-label="Available Users " selected-label="Allocation Assigned Users" options={getValue} value={getResult} disable-reordering="true"
+                                        onchange={handleChange}></lightning-dual-listbox>
+            </template>
+
+        </div>
+    <div>
+        <!-- <lightning-button type="submit" style="margin-top: 11px" class="slds-align_absolute-center" onclick={sendValueEvent} varient="brand" label="Save"></lightning-button> -->
+    </div>
+    </lightning-card>
+    <lightning-button type="submit" style="margin-top: 11px" class="slds-align_absolute-center" onclick={sendValueEvent} varient="brand" label="Save"></lightning-button>
+
+    <template if:true={usersList}>
+        <p>get the data</p>
+    </template>
+   
+</template>

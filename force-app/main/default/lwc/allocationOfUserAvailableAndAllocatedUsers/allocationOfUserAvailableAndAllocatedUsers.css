@@ -1,0 +1,17 @@
+.dualbox_Style{
+    margin-left: 26rem;
+    margin-right: 21rem;
+    font-weight: 700;
+}
+.slds-dueling-list__column {
+    padding-left: 4px;
+}
+
+.slds-dueling-list__options [aria-selected="true"] {
+    background-color: #572a31 !important;
+    color: white;
+}
+
+[lightning-dualListbox_dualListbox-host] {
+    display: initial;
+}

@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title={cardTitle}>
+        <div class="slds-p-around_medium lgc-bg text-color">
+            <lightning-tile label="Students Registration Form">
+                <p class="slds-truncate" title="Student Name"></p>
+                <div>
+                    <lightning-input type="text" name="input1"  style="width: fit-content"  label="Student First Name" onchange={handleFirstNameChange}></lightning-input>
+                </div>
+               <div>
+                
+                <lightning-input type="text" name="input1"  style="width: fit-content" label="Student Last Name" onchange={handleLastNameChange} ></lightning-input>
+               </div>
+              <div>
+                
+                <lightning-input type="number" name="input1"  style="width: fit-content"  maxlength="10" label="Student Registration Number" onchange={RegistrationNumberChange}></lightning-input>
+              </div>
+              <div>
+                  
+                <lightning-input type="number" name="input1"  style="width: fit-content" maxlength="10"  label="Phone Number" onchange={handlePhoneNumberChange} ></lightning-input>
+              </div>
+              <div>
+                
+                <lightning-input type="email" name="input1"  style="width: fit-content"  label="EmailId" onchange={handleemailIdChange}></lightning-input>
+              </div>
+              <div>
+                <lightning-button type="Submit" label="Save"  onclick={saveForm} ></lightning-button>
+                <lightning-button type="reset" label="Cancel" onreset={resetMethod} ></lightning-button>
+              </div>
+                
+              <lightning-layout-item size="12" padding="around-medium" >
+                <lightning-input type="checkbox" label="Students Name" onchange={showStudentDataToggle}></lightning-input>
+              </lightning-layout-item>
+              <lightning-layout-item size="12" padding="around-medium" >
+              <template if:true ={showInformation}>
+                <ul>
+                  <template iterator:result={studentData}>
+                    <li key={result.value}>
+                      <div if:true={result.first} class ="slds-border_top"></div>
+                      <p><lightning-formatted-text  value={result.value}></lightning-formatted-text></p>
+                      <div if:true={result.last} class ="slds-border_bottom"></div>
+                    </li>
+                  </template>
+                </ul>
+              </template>
+              </lightning-layout-item>
+
+            </lightning-tile>
+        </div>
+    </lightning-card>
+</template>

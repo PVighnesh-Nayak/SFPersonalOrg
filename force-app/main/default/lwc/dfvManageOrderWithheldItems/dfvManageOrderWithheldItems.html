@@ -1,0 +1,44 @@
+<template>
+    <lightning-card>
+      <p class="headerText">Withheld Items</p>
+      <lightning-card  >
+      <div class="table-responsive scroll-box" style="margin-left: 20px;">
+       <template if:true={withHeldItemsDeatils}>
+               <table class="table-fixed">
+                   <thead>
+                       <tr>
+                           <th class="tableheaderfirst ">Item Number</th>
+                           <th class="tableheader ">Item Name</th>
+                           <th class="tableheader ">Brand</th>
+                           <th class="tableheader ">Pack of</th>
+                           <th class="tableheader ">Price</th>
+                           <th class="tableheader ">Remove</th>
+   
+   
+                       </tr>
+                   </thead>
+                   <tbody>
+                    <template for:each={withHeldItems.data} for:item="withHeldItemsData">
+                       <tr key={withHeldItemsData.id} class="table_Column" >
+
+                           <td>{withHeldItemsData.Item_No__c}</td>
+                           <td>{withHeldItemsData.Item_Name__c}</td>
+                           <td></td>
+                           <td>{withHeldItemsData.Pack_Of__c}</td>
+                           <td>{withHeldItemsData.Price__c}</td>
+                           <td> 
+                                <lightning-icon icon-name="utility:dash" class="slds-align_absolute-center" size="x-small"></lightning-icon>
+                           </td>
+                       </tr>
+                    </template>
+                   </tbody>
+               </table>
+            </template>
+    </div>
+</lightning-card>
+    </lightning-card>
+    <template if:false={withHeldItemsDeatils}>
+        Pleasssssssssssssssssssssssssssssssssssssssssss
+        </template>
+  
+</template>

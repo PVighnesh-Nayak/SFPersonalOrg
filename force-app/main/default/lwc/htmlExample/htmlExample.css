@@ -1,0 +1,13 @@
+.button_color{
+    background-color: steelblue;
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+    font-size: larger;
+    font-weight: bold;
+}
+.header_style {
+    font-size: larger;
+    font-weight: bold;
+    color: red;
+}

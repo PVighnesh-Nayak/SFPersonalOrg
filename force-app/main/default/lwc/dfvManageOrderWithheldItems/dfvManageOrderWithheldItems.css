@@ -1,0 +1,47 @@
+/* scroll bar */
+ .scroll-box {
+    width: 92%;
+    height: 209px;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin-bottom: -12px;
+  }
+
+  .table_Column {
+    border-bottom: 1px solid #dee2e6;
+     padding:8px;
+     height: 45px;
+  }
+
+
+  .tableheader {
+  
+    color: white;
+  background-color:#572a31;
+  position: sticky !important; 
+  top:0;
+  z-index: 99;
+  height: 30px;
+ text-align: center; 
+ 
+  }
+
+  .tableheaderfirst {
+  
+    color: white;
+  background-color:#572a31;
+  position: sticky !important; 
+  top:0;
+  z-index: 99;
+  height: 30px;
+ text-align: left; 
+ 
+  }
+  caption, th, td {
+    text-align: center !important;
+}
+.headerText{
+    font-size: small;
+    font-weight: bold;
+    margin-left: 20px;
+  }

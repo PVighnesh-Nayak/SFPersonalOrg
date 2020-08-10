@@ -1,0 +1,31 @@
+<template>
+        <lightning-card title="Online Shopping">
+            <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+           
+           <!-- to itterate the array from the js we are using an for each directive here -->
+      
+       <!-- for each directive to accept the array property -->
+       <!-- to accept the currect element we use for:items -->
+   
+       <ul>
+           <template for:each={itemsInformation} for:item="info">
+           <!-- here we will asign few list items lets give the key first -->
+             <li key ={info.itemName} style="padding: 10px;">
+                 <!-- inside the list lets declare the child components -->
+                 <!-- declare the meeting room child component name -->
+                 <c-online-shopping-child item-details={info} onimageclick ={onImageSelectHandler}></c-online-shopping-child>
+               
+             </li>    
+           </template>
+       </ul>
+   
+           </lightning-layout-item>
+           
+               <lightning-layout-item size="8" padding="around-small">
+               You have selected  : {imageInformation}
+           </lightning-layout-item>
+                 
+            </lightning-layout>
+        </lightning-card>
+</template>

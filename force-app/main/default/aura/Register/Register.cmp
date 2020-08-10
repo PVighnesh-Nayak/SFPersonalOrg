@@ -1,0 +1,6 @@
+<aura:component >
+	
+    <aura:attribute name="NameOfStudent" type="string" default="" />
+    <lightning:input label ="Enter your name" name="StudentsName" value="{!v.NameOfStudent}">
+    </lightning:input>
+</aura:component>

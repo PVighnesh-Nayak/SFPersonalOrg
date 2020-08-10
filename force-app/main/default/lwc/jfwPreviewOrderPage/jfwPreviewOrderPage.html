@@ -1,0 +1,24 @@
+<template>
+    <template if:false={showNewComponent}>
+    <div class="breadcrumbContents">
+        <ul class="breadcrumb">
+            <li><a>Home</a></li>
+            <li><a>Preview Order</a></li>
+        </ul>
+     </div>
+     <br/>
+   <lightning-card>
+    <c-jfw-preview-order-button get-order-id={getOrderId}  onnewcomponent={callNewComponent} ></c-jfw-preview-order-button>
+    <br/>
+    <c-jfw-preview-order-item-table get-order-id-from-parent={getOrderId}></c-jfw-preview-order-item-table>
+ 
+</lightning-card>
+</template>
+
+<template if:true={showNewComponent}>
+    <div>
+        <c-jfw-order-status-page></c-jfw-order-status-page>
+    </div>
+</template>
+
+</template>

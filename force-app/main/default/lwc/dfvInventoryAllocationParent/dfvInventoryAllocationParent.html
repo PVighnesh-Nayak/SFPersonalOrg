@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+        <div class="breadcrumbContents">
+            <ul class="breadcrumb">
+                <li><a>Home</a></li>
+                 <li><a>Inventory Allocation</a></li>
+            </ul>
+         </div>
+        </lightning-card>
+
+        <c-dfv-inventory-allocation-brand-dropdown-child1 onselectedbrandid={brandId} ></c-dfv-inventory-allocation-brand-dropdown-child1>
+        <br/>
+        <c-dfv-inventory-allocation-table-child2 get-brand-id={selectedBrandId}></c-dfv-inventory-allocation-table-child2>
+</template>

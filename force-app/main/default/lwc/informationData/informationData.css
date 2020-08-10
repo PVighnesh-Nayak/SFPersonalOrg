@@ -1,0 +1,17 @@
+.header-data {
+    font-size: large;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blue;
+}
+.account-data {
+    color: cornflowerblue;
+    font-size: medium;
+    font-style: italic;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.button-fillColor {
+    background-color: #aba27c;
+    color: black;
+}

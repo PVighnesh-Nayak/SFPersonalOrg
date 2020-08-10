@@ -1,0 +1,28 @@
+<template>
+    <lightning-card style="font-weight: bolder;" title="Welcome To Kamat Hotel">
+        <lightning-layout>
+            <lightning-layout-item size="4" padding="around-small">
+                <ul>
+                    <template for:each={orderList} for:item="order">
+                        
+                        <li key={order.itemType} style="padding: 15px;">
+                            <c-kamat-hotel-order-items  order-information={order} onorderlist={orderHandler} ></c-kamat-hotel-order-items>
+                            Item:{items}  <br>
+                            Price:{itemPrice}
+                           
+                        </li>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+<!-- 
+            <lightning-layout-item size="8" padding="around-small" style="color: rgb(4, 132, 75);font-weight: bolder;">
+               
+                Item:{items}  <br>
+                Price:{itemPrice}
+              
+                </lightning-layout-item> -->
+
+        </lightning-layout>
+    </lightning-card>
+
+</template>
